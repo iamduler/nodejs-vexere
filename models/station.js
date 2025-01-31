@@ -14,8 +14,23 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	}
 	Station.init({
-		name: DataTypes.STRING,
-		address: DataTypes.STRING,
+		name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				len: [3, 30],
+			}
+		},
+		address: {
+			type: DataTypes.STRING,
+			validate: {
+				checkLen(value) {
+					if (value.length <= 5 || value.length > 20) {
+						throw new Error('Độ dài phải từ 5 đến 20 ký tự');
+					}
+				} 
+			}
+		},
 		province: DataTypes.STRING
 	}, {
 		sequelize,
