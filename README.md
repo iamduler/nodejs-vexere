@@ -19,3 +19,8 @@ yarn sequelize db:create
 
 ## Tạo model
 yarn sequelize model:generate --name Station --attributes name:string,address:string,province:string
+
+## Tạo seeder
+yarn sequelize seed:generate --name create-station-fake
+yarn sequelize db:seed:all
+yarn sequelize db:seed:undo:all
