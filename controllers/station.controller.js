@@ -69,11 +69,6 @@ const updateStation = async (req, res) => {
                 id,
             }
         });
-
-        if (!data) {
-            res.status(301).send('Invalid id.');
-            return;
-        }
         
         // Update
         data.name = params.name;
@@ -99,12 +94,6 @@ const deleteStation = async (req, res) => {
                 id,
             }
         });
-
-        if (!data) {
-            res.status(301).send('Invalid id.');
-            return;
-        }
-        
         
         await data.destroy();
         res.status(200).send('Deleted!');
