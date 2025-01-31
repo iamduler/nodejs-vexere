@@ -11,7 +11,12 @@
   "repository": "https://github.com/iamduler/nodejs-vexere.git",
   "author": "Duler",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
   "devDependencies": {
+    "nodemon": "^3.1.9",
     "sequelize-cli": "^6.6.2"
   }
 }
