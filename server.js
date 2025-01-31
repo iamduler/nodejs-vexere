@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const { sequelize } = require("./models");
+const { rootRouter } = require("./routers");
 
 const app = express();
 
@@ -23,3 +24,6 @@ app.listen(3000, async () => {
         console.error('Unable to connect to the database:', error);
     }
 });
+
+// Use router
+app.use('/api/v1', rootRouter);

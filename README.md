@@ -15,3 +15,7 @@ yarn sequelize init
 # Tạo nhanh database từ config có sẵn
 > Hệ thống sẽ dựa theo thông tin DB từ file config.json để khởi tạo DB tương ứng
 yarn sequelize db:create 
+
+
+## Tạo model
+yarn sequelize model:generate --name Station --attributes name:string,address:string,province:string
