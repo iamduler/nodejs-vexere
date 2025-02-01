@@ -8,6 +8,7 @@ yarn add sequelize mysql2
 yarn add sequelize-cli --dev
 yarn add nodemon --dev
 yarn add bcryptjs
+yarn add jsonwebtoken
 
 yarn sequelize init
 
