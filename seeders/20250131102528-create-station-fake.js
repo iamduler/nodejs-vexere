@@ -29,7 +29,7 @@ module.exports = {
 			},
 			{
 				name: "Bến xe Miền Đông mới",
-				address: " 501 Đường Hoàng Hữu Nam, P.Long Bình, TP.Thủ Đức, TP.Hồ Chí Minh",
+				address: "501 Đường Hoàng Hữu Nam, P.Long Bình, TP.Thủ Đức, TP.Hồ Chí Minh",
 				province: "TP. HCM",
 				createdAt: "2025-01-31 05:54:51",
 				updatedAt: "2025-01-31 05:54:51",

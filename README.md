@@ -19,6 +19,10 @@ yarn sequelize db:create
 
 ## Tạo model
 yarn sequelize model:generate --name Station --attributes name:string,address:string,province:string
+yarn sequelize model:generate --name User --attributes name:string email:string,password:string,numberPhone:string,type:string
+
+## Tạo bảng tương ứng với model
+yarn sequelize db:migrate để tạo các bảng tương ứng với model
 
 ## Tạo seeder
 yarn sequelize seed:generate --name create-station-fake
