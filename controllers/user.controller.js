@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { where } = require("sequelize");
 
 const register = async (req, res) => {
     const { name, email, password, numberPhone } = req.body;
@@ -50,6 +51,22 @@ const login = async (req, res) => {
     }
 }
 
+const uploadAvatar = async (req, res) => {
+    const { user } = req;
+    const { file } = req;
+
+    const existedUser = await User.findOne({
+        email: user.email
+    });
+
+    const imageUrl = `http://localhost:3000/${file.path}`;
+
+    existedUser.avatar = imageUrl;
+    await existedUser.save();
+
+    res.status(200).send("Avatar uploaded.");
+}
+
 module.exports = {
-    register, login
+    register, login, uploadAvatar
 }
