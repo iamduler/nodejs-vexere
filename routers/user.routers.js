@@ -9,7 +9,7 @@ userRouter.post("/register", register);
 
 userRouter.post("/login", login);
 
-userRouter.post('/upload-avatar', authenticate, uploadImage() , uploadAvatar)
+userRouter.post('/upload-avatar', authenticate, uploadImage('avatar') , uploadAvatar)
 
 module.exports = {
     userRouter,

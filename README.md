@@ -10,6 +10,7 @@ yarn add nodemon --dev
 yarn add bcryptjs
 yarn add jsonwebtoken
 yarn add multer (Thao tác với file)
+yarn add mkdirp
 
 yarn sequelize init
 
