@@ -9,6 +9,7 @@ yarn add sequelize-cli --dev
 yarn add nodemon --dev
 yarn add bcryptjs
 yarn add jsonwebtoken
+yarn add multer (Thao tác với file)
 
 yarn sequelize init
 
