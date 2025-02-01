@@ -19,7 +19,19 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({ storage: storage });
+const upload = multer({
+    storage: storage, fileFilter: (req, file, cb) => {
+        const imageExts = ['jpg', 'jpeg', 'jfif', 'pjpeg', 'pjp', 'apng', 'png', 'gif', 'tiff', 'tif', 'psd', 'avif', 'svg', 'webp', 'ico', 'cur'];
+        const ext = file.originalname.split('.').pop();
+
+        if (imageExts.includes(ext)) {
+            cb(null, true);
+        }
+        else {
+            cb(new Error("Invalid file extension."));
+        }
+    }
+});
 userRouter.post('/upload-avatar', upload.single("avatar"), (req, res) => {
     res.send("Upload avatar...");
 })
