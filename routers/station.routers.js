@@ -3,10 +3,11 @@ const { createStation, listStations, retrieveStation, updateStation, deleteStati
 const { checkExistById } = require("../middlewares/validations/checkExsits");
 const { Station } = require("../models");
 const { authenticate } = require("../middlewares/auth/authenticate");
+const { authorize } = require("../middlewares/auth/authorize");
 
 const stationRouter = express.Router();
 
-stationRouter.post("/", authenticate, createStation);
+stationRouter.post("/", authenticate, authorize(), createStation);
 
 stationRouter.get("/", listStations);
 
