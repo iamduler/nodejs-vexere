@@ -1,7 +1,7 @@
 const { User } = require("../models");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { where } = require("sequelize");
+const gravatarUrl = require("gravatar-url");
 
 const register = async (req, res) => {
     const { name, email, password, numberPhone } = req.body;
@@ -13,7 +13,10 @@ const register = async (req, res) => {
         // Mã hóa cái chuỗi + password
         const hashPassword = bcrypt.hashSync(password, salt);
 
-        const newUser = await User.create({ name, email, password: hashPassword, numberPhone });
+        // Tạo avatar mặc định
+        const avatarUrl = gravatarUrl(email);
+
+        const newUser = await User.create({ name, email, password: hashPassword, numberPhone, avatar: avatarUrl });
         res.status(201).send(newUser);
     }
     catch (error) {

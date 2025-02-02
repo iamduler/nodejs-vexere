@@ -11,6 +11,7 @@ yarn add bcryptjs
 yarn add jsonwebtoken
 yarn add multer (Thao tác với file)
 yarn add mkdirp
+yarn add gravatar-url
 
 yarn sequelize init
 
