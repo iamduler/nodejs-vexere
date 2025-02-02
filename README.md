@@ -23,6 +23,7 @@ yarn sequelize db:create
 ## Tạo model
 yarn sequelize model:generate --name Station --attributes name:string,address:string,province:string
 yarn sequelize model:generate --name User --attributes name:string email:string,password:string,numberPhone:string,type:string
+yarn sequelize model:generate --name Trip --attributes startTime:date, price:float
 
 ## Tạo bảng tương ứng với model
 yarn sequelize db:migrate để tạo các bảng tương ứng với model
