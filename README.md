@@ -12,6 +12,7 @@ yarn add jsonwebtoken
 yarn add multer (Thao tác với file)
 yarn add mkdirp
 yarn add gravatar-url
+yarn add express-fingerprint
 
 yarn sequelize init
 
