@@ -32,5 +32,8 @@ yarn sequelize db:migrate để tạo các bảng tương ứng với model
 
 ## Tạo seeder
 yarn sequelize seed:generate --name create-station-fake
+yarn sequelize seed:generate --name create-trip-fake
+yarn sequelize seed:generate --name create-user-fake
+yarn sequelize seed:generate --name create-ticket-fake
 yarn sequelize db:seed:all
 yarn sequelize db:seed:undo:all
